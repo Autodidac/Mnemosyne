@@ -58,6 +58,7 @@
     <ClCompile Include="src\core.id.cpp" />
     <ClCompile Include="src\core.math.cpp" />
     <ClCompile Include="src\core.memory.cpp" />
+    <ClCompile Include="src\core.memory.index.cpp" />
     <ClCompile Include="modules\mylib.ixx" />
     <ClCompile Include="modules\core.log.ixx" />
     <ClCompile Include="modules\core.time.ixx" />
@@ -71,6 +72,7 @@
     <ClCompile Include="modules\core.id.ixx" />
     <ClCompile Include="modules\core.math.ixx" />
     <ClCompile Include="modules\core.memory.ixx" />
+    <ClCompile Include="modules\core.memory.index.ixx" />
     <ClInclude Include="include\app_api.h" />
     <ClInclude Include="include\main.h" />
   </ItemGroup>
