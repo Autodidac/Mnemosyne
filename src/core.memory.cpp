@@ -12,6 +12,7 @@ module core.memory;
 import core.assert;
 import core.error;
 import core.log;
+import core.memory.index;
 import core.path;
 import core.time;
 
@@ -127,6 +128,11 @@ namespace core::memory
                 const auto root = memory_root();
                 core::log::info("memory", std::string{"committing staged records to "} + root.string());
                 s.stored.insert(s.stored.end(), s.staged.begin(), s.staged.end());
+                auto index_result = core::memory::index::update_on_commit(s.staged);
+                if (!index_result)
+                {
+                    return index_result;
+                }
                 s.staged.clear();
                 return {};
             }
@@ -223,15 +229,6 @@ namespace core::memory
             }
         }
 
-        namespace index
-        {
-            void refresh(std::size_t count)
-            {
-                const auto root = memory_root();
-                (void)root;
-                core::log::info("memory", std::string{"index refreshed for "} + std::to_string(count) + " records");
-            }
-        }
     }
 
     core::error::result<memory_id> stage_add(std::string_view text)
@@ -251,14 +248,7 @@ namespace core::memory
 
     core::error::result<void> stage_commit()
     {
-        auto result = stage::commit();
-        if (!result)
-        {
-            return result;
-        }
-        auto& s = state();
-        index::refresh(s.stored.size());
-        return {};
+        return stage::commit();
     }
 
     core::error::result<void> stage_discard()
@@ -268,7 +258,7 @@ namespace core::memory
 
     core::error::result<std::vector<memory_result>> store_query(const memory_query& query)
     {
-        return store::query(query);
+        return core::memory::index::query(query);
     }
 
     core::error::result<void> reinforce(memory_id id, float delta)
