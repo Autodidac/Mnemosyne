@@ -7,7 +7,7 @@ module;
 export module core.memory.store;
 
 import core.error;
-import core.memory;
+import core.memory.types;
 
 export namespace core::memory::store
 {

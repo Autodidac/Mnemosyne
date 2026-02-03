@@ -57,6 +57,9 @@
     <ClCompile Include="src\core.memory.index.cpp">
       <Filter>src</Filter>
     </ClCompile>
+    <ClCompile Include="src\core.memory.stage.cpp">
+      <Filter>src</Filter>
+    </ClCompile>
     <ClCompile Include="modules\mylib.ixx">
       <Filter>modules</Filter>
     </ClCompile>
@@ -97,6 +100,12 @@
       <Filter>modules</Filter>
     </ClCompile>
     <ClCompile Include="modules\core.memory.index.ixx">
+      <Filter>modules</Filter>
+    </ClCompile>
+    <ClCompile Include="modules\core.memory.stage.ixx">
+      <Filter>modules</Filter>
+    </ClCompile>
+    <ClCompile Include="modules\core.memory.types.ixx">
       <Filter>modules</Filter>
     </ClCompile>
   </ItemGroup>

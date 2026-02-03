@@ -19,7 +19,7 @@ module core.memory.store;
 
 import core.error;
 import core.log;
-import core.memory;
+import core.memory.types;
 
 namespace core::memory::store
 {

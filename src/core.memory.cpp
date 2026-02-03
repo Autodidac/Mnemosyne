@@ -13,8 +13,7 @@ import core.assert;
 import core.error;
 import core.log;
 import core.memory.index;
-import core.path;
-import core.time;
+import core.memory.stage;
 
 namespace core::memory
 {
@@ -22,9 +21,7 @@ namespace core::memory
     {
         struct memory_state
         {
-            std::vector<memory_record> staged;
             std::vector<memory_record> stored;
-            std::uint64_t next_id = 1;
         };
 
         memory_state& state()
@@ -33,122 +30,9 @@ namespace core::memory
             return s;
         }
 
-        core::path::path memory_root()
-        {
-            static core::path::path root;
-            static bool init = false;
-            if (!init)
-            {
-                const auto base = core::path::executable_dir();
-                if (base.empty())
-                {
-                    root = core::path::normalize(core::path::path{"data/memory"});
-                    core::log::warn("memory", "executable dir unavailable; using relative data/memory");
-                }
-                else
-                {
-                    root = core::path::join(core::path::join(base, "data"), "memory");
-                }
-                core::asserts::that(!root.empty(), "memory root path unavailable");
-                core::log::info("memory", std::string{"memory root: "} + root.string());
-                init = true;
-            }
-            return root;
-        }
-
         core::error::err not_found(std::string_view msg)
         {
             return core::error::make({core::error::core_domain::id, core::error::core_domain::not_found}, msg);
-        }
-
-        namespace stage
-        {
-            core::error::result<memory_id> add(std::string_view text)
-            {
-                if (text.empty())
-                {
-                    return std::unexpected(core::error::invalid_argument("memory text empty"));
-                }
-
-                auto& s = state();
-                memory_record rec;
-                rec.id = memory_id{s.next_id++};
-                rec.text = std::string{text};
-                rec.created_ns = core::time::now_ns();
-                rec.updated_ns = rec.created_ns;
-                rec.strength = 1.0f;
-
-                core::asserts::that(rec.id.valid(), "generated memory id invalid");
-                s.staged.push_back(rec);
-                core::log::info("memory", "staged new memory record");
-                return rec.id;
-            }
-
-            core::error::result<void> edit(memory_id id, std::string_view text)
-            {
-                if (!id.valid())
-                {
-                    core::asserts::that(false, "memory id must be valid");
-                    return std::unexpected(core::error::invalid_argument("memory id invalid"));
-                }
-                if (text.empty())
-                {
-                    return std::unexpected(core::error::invalid_argument("memory text empty"));
-                }
-
-                auto& s = state();
-                auto it = std::find_if(s.staged.begin(), s.staged.end(),
-                    [&](const memory_record& rec) { return rec.id == id; });
-                if (it == s.staged.end())
-                {
-                    return std::unexpected(not_found("staged memory not found"));
-                }
-
-                it->text = std::string{text};
-                it->updated_ns = core::time::now_ns();
-                core::log::info("memory", "updated staged memory record");
-                return {};
-            }
-
-            core::error::result<std::vector<memory_record>> list()
-            {
-                auto& s = state();
-                return s.staged;
-            }
-
-            core::error::result<void> commit()
-            {
-                auto& s = state();
-                if (s.staged.empty())
-                {
-                    core::log::trace("memory", "no staged records to commit");
-                    return {};
-                }
-
-                const auto root = memory_root();
-                core::log::info("memory", std::string{"committing staged records to "} + root.string());
-                s.stored.insert(s.stored.end(), s.staged.begin(), s.staged.end());
-                auto index_result = core::memory::index::update_on_commit(s.staged);
-                if (!index_result)
-                {
-                    return index_result;
-                }
-                s.staged.clear();
-                return {};
-            }
-
-            core::error::result<void> discard()
-            {
-                auto& s = state();
-                if (s.staged.empty())
-                {
-                    core::log::trace("memory", "no staged records to discard");
-                    return {};
-                }
-                s.staged.clear();
-                core::log::info("memory", "discarded staged memory records");
-                return {};
-            }
         }
 
         namespace store
@@ -233,27 +117,44 @@ namespace core::memory
 
     core::error::result<memory_id> stage_add(std::string_view text)
     {
-        return stage::add(text);
+        return core::memory::stage::add(text);
     }
 
     core::error::result<void> stage_edit(memory_id id, std::string_view text)
     {
-        return stage::edit(id, text);
+        return core::memory::stage::edit(id, text);
     }
 
     core::error::result<std::vector<memory_record>> stage_list()
     {
-        return stage::list();
+        return core::memory::stage::list();
     }
 
     core::error::result<void> stage_commit()
     {
-        return stage::commit();
+        auto committed = core::memory::stage::commit();
+        if (!committed)
+        {
+            return std::unexpected(committed.error());
+        }
+        if (committed->empty())
+        {
+            core::log::trace("memory", "no staged records to commit");
+            return {};
+        }
+        auto& s = state();
+        s.stored.insert(s.stored.end(), committed->begin(), committed->end());
+        auto index_result = core::memory::index::update_on_commit(*committed);
+        if (!index_result)
+        {
+            return index_result;
+        }
+        return {};
     }
 
     core::error::result<void> stage_discard()
     {
-        return stage::discard();
+        return core::memory::stage::discard();
     }
 
     core::error::result<std::vector<memory_result>> store_query(const memory_query& query)
