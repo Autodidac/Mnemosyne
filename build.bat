@@ -94,6 +94,10 @@ set "M8=core.env"
 set "M9=core.path"
 set "M10=core.assert"
 set "M11=runtime"
+set "M12=core.memory"
+set "M13=core.memory.store"
+set "M14=core.memory.index"
+set "M15=core.memory.stage"
 
 set "LIBFILE=mylib.lib"
 set "EXE=app.exe"
@@ -108,7 +112,7 @@ REM ------------------------------------------------------------
 REM Compile module interfaces (produce .ifc + obj into folders)
 REM ------------------------------------------------------------
 echo [1/3] compile module interfaces
-for %%M in (%M0% %M1% %M2% %M3% %M4% %M5% %M6% %M7% %M8% %M9% %M10% %M11%) do (
+for %%M in (%M0% %M1% %M2% %M3% %M4% %M5% %M6% %M7% %M8% %M9% %M10% %M11% %M12% %M13% %M14% %M15%) do (
   echo   interface %%M
   cl %CXX_IFC% /interface /ifcOutput "%IFCDIR%\%%M.ifc" /Fo"%OBJDIR%\%%M_ifc.obj" "%MODDIR%\%%M.ixx" || exit /b 1
 )
@@ -128,12 +132,16 @@ set "REFS=%REFS% /reference core.env="%IFCDIR%\core.env.ifc""
 set "REFS=%REFS% /reference core.path="%IFCDIR%\core.path.ifc""
 set "REFS=%REFS% /reference core.assert="%IFCDIR%\core.assert.ifc""
 set "REFS=%REFS% /reference runtime="%IFCDIR%\runtime.ifc""
+set "REFS=%REFS% /reference core.memory="%IFCDIR%\core.memory.ifc""
+set "REFS=%REFS% /reference core.memory.store="%IFCDIR%\core.memory.store.ifc""
+set "REFS=%REFS% /reference core.memory.index="%IFCDIR%\core.memory.index.ifc""
+set "REFS=%REFS% /reference core.memory.stage="%IFCDIR%\core.memory.stage.ifc""
 
 REM ------------------------------------------------------------
 REM Compile module implementations
 REM ------------------------------------------------------------
 echo [2/3] compile module implementations
-for %%M in (%M0% %M1% %M2% %M3% %M4% %M5% %M6% %M7% %M8% %M9% %M10% %M11%) do (
+for %%M in (%M0% %M1% %M2% %M3% %M4% %M5% %M6% %M7% %M8% %M9% %M10% %M11% %M12% %M13% %M14% %M15%) do (
   echo   impl %%M
   cl %CXX_IFC% %REFS% /Fo"%OBJDIR%\%%M.obj" "%SRCDIR%\%%M.cpp" || exit /b 1
 )
@@ -145,7 +153,7 @@ REM ------------------------------------------------------------
 REM Archive -> mylib.lib
 REM ------------------------------------------------------------
 echo [3/3] archive + link
-lib /nologo /OUT:"%LIBFILE%" "%OBJDIR%\*_ifc.obj" "%OBJDIR%\mylib.obj" "%OBJDIR%\core.log.obj" "%OBJDIR%\core.time.obj" "%OBJDIR%\core.error.obj" "%OBJDIR%\core.format.obj" "%OBJDIR%\core.string.obj" "%OBJDIR%\core.id.obj" "%OBJDIR%\core.math.obj" "%OBJDIR%\core.env.obj" "%OBJDIR%\core.path.obj" "%OBJDIR%\core.assert.obj" "%OBJDIR%\runtime.obj" "%OBJDIR%\lib_main.obj" || exit /b 1
+lib /nologo /OUT:"%LIBFILE%" "%OBJDIR%\*_ifc.obj" "%OBJDIR%\mylib.obj" "%OBJDIR%\core.log.obj" "%OBJDIR%\core.time.obj" "%OBJDIR%\core.error.obj" "%OBJDIR%\core.format.obj" "%OBJDIR%\core.string.obj" "%OBJDIR%\core.id.obj" "%OBJDIR%\core.math.obj" "%OBJDIR%\core.env.obj" "%OBJDIR%\core.path.obj" "%OBJDIR%\core.assert.obj" "%OBJDIR%\runtime.obj" "%OBJDIR%\core.memory.obj" "%OBJDIR%\core.memory.store.obj" "%OBJDIR%\core.memory.index.obj" "%OBJDIR%\core.memory.stage.obj" "%OBJDIR%\lib_main.obj" || exit /b 1
 
 REM app TU (no main)
 cl %CXX_INC% /Fo"%OBJDIR%\app.obj" "%SRCDIR%\app.cpp" || exit /b 1
