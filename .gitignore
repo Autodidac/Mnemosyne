@@ -35,6 +35,10 @@
 *.out
 *.app
 
+Shared_Project/examples/YourStaticLib/x64/*
+Shared_Project/examples/AppExample/x64/*
+Debug/*
+Release/*
 x64/*
 .vs/*
 ifc/*
