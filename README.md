@@ -1,6 +1,7 @@
-# Static library with an Internal Entrypoint (in C++23 and Modules)
+# Mnemosyne: Static library with an internal entrypoint (C++23 + Modules)
 
-This repository demonstrates an **internal entrypoint** pattern in modern C++23:
+This repository demonstrates an **internal entrypoint** pattern in modern C++23,
+alongside a small in-process “memory” store and staging workflow.
 
 > `main()` lives inside a **static library**, not in the executable.
 
@@ -8,7 +9,8 @@ The executable links the library and contains **no entrypoint of its own**.
 At link time, the linker pulls the object file containing `main()` out of the static library,  
 so the program effectively *runs the library*.
 
-This example is intentionally minimal and uses **standard C++23 modules** with MSVC.
+This example uses **standard C++23 modules** with MSVC and stays close to the metal
+(batch build, VS projects, and CMake).
 
 ---
 
@@ -62,19 +64,39 @@ Modules and sources:
 - `core.math.ixx` / `core.math.cpp`  
   Small math helpers (clamp / lerp / align)
 
+- `core.memory.ixx` / `core.memory.cpp`  
+  In-process memory records, staging, and commit operations
+
+- `core.memory.store.ixx` / `core.memory.store.cpp`  
+  Persistent snapshot I/O for memory records
+
+- `core.memory.index.ixx` / `core.memory.index.cpp`  
+  Query indexing and scoring for memory search
+
+- `core.memory.stage.ixx` / `core.memory.stage.cpp`  
+  Staging journal (add/edit/commit) for memory records
+
 - `runtime.ixx` / `runtime.cpp`  
-  Runtime module that owns initialization and the main loop
+  Runtime module that owns initialization, memory loading, and the main loop
 
 - `lib_main.cpp`  
   Defines `main()` and forwards execution to `runtime::run()`
+
+- `tests_main.cpp`  
+  Standalone test executable (only built when tests are enabled)
 
 ### Executable (`app.exe`)
 
 - `app.cpp`  
   A translation unit with **no `main()`**
 
-The executable exists purely to link against the static library and provide
-application-side callbacks.
+The executable exists purely to link against the static library and host
+application-side callbacks (currently defined, but not yet invoked).
+
+Shared headers:
+
+- `include/app_api.h`  
+  C-compatible callbacks exposed by the app, consumable by the library
 
 ---
 
@@ -82,7 +104,7 @@ application-side callbacks.
 
 1. All modules and `lib_main.cpp` are compiled into `mylib.lib`
 2. The executable links against `mylib.lib`
-3. An anchor symbol forces the linker to pull in the object that defines `main()`
+3. The linker resolves `main()` from the library because the executable has none
 4. When the program starts, execution begins inside the library runtime
 
 This pattern is useful for:
@@ -100,7 +122,6 @@ This pattern is useful for:
 
 ``` bat
 .\build.bat
-
 ``` 
 
 The script:
@@ -143,6 +164,7 @@ cmake --build build --config Release --target tests
 When run, the program:
 
 - logs startup via `core.log`
+- loads the memory store from `data/memory` (relative to the executable)
 - calls `mylib::entry()` and logs its return value
 - enters a loop driven by `core.time::frame_clock`
 - prints one line per second
@@ -152,6 +174,7 @@ The loop is intentionally simple and exists only to prove:
 - the runtime lives in the library
 - systems initialize in a controlled order
 - the process lifetime is owned by the library
+- memory staging and query plumbing is working
 
 ---
 
@@ -162,33 +185,24 @@ The loop is intentionally simple and exists only to prove:
 Runs exactly **3 frames** and exits cleanly.
 
 ``` bat
-
 .\build.bat smoke
-
 ``` 
+
+Smoke mode runs a short memory staging flow (stage → commit → query) and then
+exits after 3 frames.
 
 ### Tests
 
 Builds and runs a small `tests.exe` linked against the same library.
 
 ``` bat
-
 .\build.bat tests
-
-
 ``` 
 
 ---
 
 ## Scope
 
-This is **not** a framework and **not** a build system replacement.
-
-It is a:
-
-- minimal
-- correct
-- reproducible
-
-- example of an **internal-entrypoint architecture** using pure C++23 and modules,
-suitable as a foundation for adding additional systems.
+This is **not** a framework and **not** a build system replacement. It is a
+minimal, correct, reproducible example of an **internal-entrypoint architecture**
+using pure C++23 modules, suitable as a foundation for adding additional systems.
