@@ -64,11 +64,12 @@ int main()
     that(stage_list_result->size() == 1);
     that(stage_list_result->front().id == stage_id);
     that(stage_list_result->front().text == "alpha one edited");
+    auto staged_records = *stage_list_result;
 
     auto stage_commit_result = core::memory::stage_commit();
     that(stage_commit_result.has_value());
-    that(stage_commit_result->size() == 1);
-    that(stage_commit_result->front().id == stage_id);
+    that(staged_records.size() == 1);
+    that(staged_records.front().id == stage_id);
 
     auto stage_list_after_commit = core::memory::stage_list();
     that(stage_list_after_commit.has_value());
@@ -80,7 +81,7 @@ int main()
     std::filesystem::create_directories(store_root, cleanup_ec);
 
     core::memory::store::memory_snapshot snapshot;
-    snapshot.records = *stage_commit_result;
+    snapshot.records = staged_records;
     snapshot.next_id = 1;
     for (const auto& record : snapshot.records)
     {
