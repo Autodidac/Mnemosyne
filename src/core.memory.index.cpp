@@ -16,7 +16,7 @@ module;
 module core.memory.index;
 
 import core.error;
-import core.memory;
+import core.memory.types;
 import core.memory.store;
 import core.time;
 
