@@ -14,6 +14,7 @@ import core.error;
 import core.log;
 import core.memory.index;
 import core.memory.stage;
+import core.time;
 
 namespace core::memory
 {

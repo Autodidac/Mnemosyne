@@ -1,0 +1,58 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <PropertyGroup Label="Globals">
+    <MSBuildAllProjects Condition="'$(MSBuildVersion)' == '' Or '$(MSBuildVersion)' &lt; '16.0'">$(MSBuildAllProjects);$(MSBuildThisFileFullPath)</MSBuildAllProjects>
+    <HasSharedItems>true</HasSharedItems>
+    <ItemsProjectGuid>{9847cf33-5287-4fb2-8ccf-2d3114d915d2}</ItemsProjectGuid>
+  </PropertyGroup>
+  <ItemDefinitionGroup>
+    <ClCompile>
+      <AdditionalIncludeDirectories>%(AdditionalIncludeDirectories);$(MSBuildThisFileDirectory)</AdditionalIncludeDirectories>
+    </ClCompile>
+  </ItemDefinitionGroup>
+  <ItemGroup>
+    <ProjectCapability Include="SourceItemsFromImports" />
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="$(MSBuildThisFileDirectory)include\app_api.h" />
+    <ClInclude Include="$(MSBuildThisFileDirectory)include\main.h" />
+  </ItemGroup>
+  <ItemGroup>
+    <ClCompile Include="$(MSBuildThisFileDirectory)modules\core.assert.ixx" />
+    <ClCompile Include="$(MSBuildThisFileDirectory)modules\core.env.ixx" />
+    <ClCompile Include="$(MSBuildThisFileDirectory)modules\core.error.ixx" />
+    <ClCompile Include="$(MSBuildThisFileDirectory)modules\core.format.ixx" />
+    <ClCompile Include="$(MSBuildThisFileDirectory)modules\core.id.ixx" />
+    <ClCompile Include="$(MSBuildThisFileDirectory)modules\core.log.ixx" />
+    <ClCompile Include="$(MSBuildThisFileDirectory)modules\core.math.ixx" />
+    <ClCompile Include="$(MSBuildThisFileDirectory)modules\core.memory.index.ixx" />
+    <ClCompile Include="$(MSBuildThisFileDirectory)modules\core.memory.ixx" />
+    <ClCompile Include="$(MSBuildThisFileDirectory)modules\core.memory.stage.ixx" />
+    <ClCompile Include="$(MSBuildThisFileDirectory)modules\core.memory.store.ixx" />
+    <ClCompile Include="$(MSBuildThisFileDirectory)modules\core.memory.types.ixx" />
+    <ClCompile Include="$(MSBuildThisFileDirectory)modules\core.path.ixx" />
+    <ClCompile Include="$(MSBuildThisFileDirectory)modules\core.string.ixx" />
+    <ClCompile Include="$(MSBuildThisFileDirectory)modules\core.time.ixx" />
+    <ClCompile Include="$(MSBuildThisFileDirectory)modules\mylib.ixx" />
+    <ClCompile Include="$(MSBuildThisFileDirectory)modules\runtime.ixx" />
+    <ClCompile Include="$(MSBuildThisFileDirectory)src\core.assert.cpp" />
+    <ClCompile Include="$(MSBuildThisFileDirectory)src\core.env.cpp" />
+    <ClCompile Include="$(MSBuildThisFileDirectory)src\core.error.cpp" />
+    <ClCompile Include="$(MSBuildThisFileDirectory)src\core.format.cpp" />
+    <ClCompile Include="$(MSBuildThisFileDirectory)src\core.id.cpp" />
+    <ClCompile Include="$(MSBuildThisFileDirectory)src\core.log.cpp" />
+    <ClCompile Include="$(MSBuildThisFileDirectory)src\core.math.cpp" />
+    <ClCompile Include="$(MSBuildThisFileDirectory)src\core.memory.cpp" />
+    <ClCompile Include="$(MSBuildThisFileDirectory)src\core.memory.index.cpp" />
+    <ClCompile Include="$(MSBuildThisFileDirectory)src\core.memory.stage.cpp" />
+    <ClCompile Include="$(MSBuildThisFileDirectory)src\core.memory.store.cpp" />
+    <ClCompile Include="$(MSBuildThisFileDirectory)src\core.path.cpp" />
+    <ClCompile Include="$(MSBuildThisFileDirectory)src\core.string.cpp" />
+    <ClCompile Include="$(MSBuildThisFileDirectory)src\core.time.cpp" />
+    <ClCompile Include="$(MSBuildThisFileDirectory)src\lib_main.cpp" />
+    <ClCompile Include="$(MSBuildThisFileDirectory)src\mylib.cpp" />
+    <ClCompile Include="$(MSBuildThisFileDirectory)src\mylib.headers.cpp" />
+    <ClCompile Include="$(MSBuildThisFileDirectory)src\runtime.cpp" />
+    <ClCompile Include="$(MSBuildThisFileDirectory)src\tests_main.cpp" />
+  </ItemGroup>
+</Project>

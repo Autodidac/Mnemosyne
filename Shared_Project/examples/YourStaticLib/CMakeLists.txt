@@ -3,10 +3,13 @@
  *   License: MIT (adapt as needed)
  **************************************************************/
 cmake_minimum_required(VERSION 3.29)
-project(StaticLibEntryPoint LANGUAGES CXX)
+project(App LANGUAGES CXX)
 
-set(CMAKE_CXX_STANDARD 23)
-set(CMAKE_CXX_STANDARD_REQUIRED ON)
-set(CMAKE_CXX_EXTENSIONS OFF)
+add_executable(App src/app.cpp)
+target_link_libraries(App PRIVATE mylib)
 
-add_subdirectory(Engine)
+if (MSVC)
+    target_compile_options(App PRIVATE /W4 /permissive-)
+else()
+    target_compile_options(App PRIVATE -Wall -Wextra -Wpedantic)
+endif()
