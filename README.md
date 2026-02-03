@@ -122,6 +122,20 @@ Notes:
 - Module dependency scanning is enabled
 - No custom build steps are required
 
+### C) CMake (MSVC with C++23 modules)
+
+``` bat
+cmake -S . -B build -G "Visual Studio 17 2022" -A x64
+cmake --build build --config Release
+```
+
+Optional tests target:
+
+``` bat
+cmake -S . -B build -G "Visual Studio 17 2022" -A x64 -DMNEMOSYNE_BUILD_TESTS=ON
+cmake --build build --config Release --target tests
+```
+
 ---
 
 ## Runtime behavior
@@ -178,4 +192,3 @@ It is a:
 
 - example of an **internal-entrypoint architecture** using pure C++23 and modules,
 suitable as a foundation for adding additional systems.
-
