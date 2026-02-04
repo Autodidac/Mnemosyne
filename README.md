@@ -1,5 +1,4 @@
-# Mnemosyne: Static library with an internal entrypoint (C++23 + Modules)
-Mnemosyne Artificial Intelligence - In Greek mythology, Mnemosyne (/nɪˈmɒzɪni/; Ancient Greek: Μνημοσύνη) was one of the Titans, 
+# Mnemosyne Artificial Intelligence: - In Greek mythology, Mnemosyne (/nɪˈmɒzɪni/; Ancient Greek: Μνημοσύνη) was one of the Titans, 
 who are the children of Uranus (Sky) and Gaia (Earth). She was the goddess of memory and the mother of the nine Muses by Zeus. 
   
   The name Mnemosyne is derived from the Greek word mnēmē ('remembrance, memory').
