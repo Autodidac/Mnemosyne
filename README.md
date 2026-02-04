@@ -1,7 +1,7 @@
 # Mnemosyne: Static library with an internal entrypoint (C++23 + Modules)
 
-This repository demonstrates an **internal entrypoint** pattern in modern C++23,
-alongside a small in-process “memory” store and staging workflow.
+llm piggy backing, reinforced training, gated self reproducing AI
+
 
 > `main()` lives inside a **static library**, not in the executable.
 
