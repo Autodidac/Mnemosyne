@@ -279,8 +279,7 @@ export namespace almondnamespace::core
             if (!windowData) return;
 
             const core::RenderPath renderPath =
-                (type == core::ContextType::OpenGL || type == core::ContextType::RayLib)
-                ? core::RenderPath::OpenGL
+                (type == core::ContextType::OpenGL) ? core::RenderPath::OpenGL
                 : (type == core::ContextType::SFML) ? core::RenderPath::SFML
                 : (type == core::ContextType::Vulkan) ? core::RenderPath::Vulkan
                 : core::RenderPath::Unknown;
