@@ -16,9 +16,12 @@ export module acontext.vulkan.context:api;
 
 import aengine.core.context;
 import aengine.context.commandqueue;
+import aatlas.texture;
+import aspritehandle;
 
 import <functional>;
 import <memory>;
+import <span>;
 
 namespace almondnamespace::vulkancontext
 {
@@ -35,4 +38,11 @@ namespace almondnamespace::vulkancontext
     export void vulkan_cleanup(std::shared_ptr<core::Context> ctx);
     export int  vulkan_get_width();
     export int  vulkan_get_height();
+    export void vulkan_draw_sprite(
+        almondnamespace::SpriteHandle sprite,
+        std::span<const almondnamespace::TextureAtlas* const> atlases,
+        float x,
+        float y,
+        float w,
+        float h);
 }
