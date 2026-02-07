@@ -308,6 +308,13 @@ namespace almondnamespace::raylibcontext
             ctx->windowData->glContext = st.hglrc;
             ctx->windowData->usesSharedContext = false;
         }
+        if (ctx)
+        {
+            // Raylib creates its own OpenGL context; ensure GUI/OpenGL helpers use this one,
+            // not any shared/placeholder context the multiplexer may have created earlier.
+            ctx->native_drawable = st.hdc;
+            ctx->native_gl_context = st.hglrc;
+        }
 #if defined(_DEBUG)
         logger::info(
             "Raylib",
