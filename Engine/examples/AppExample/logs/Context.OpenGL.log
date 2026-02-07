@@ -3,3 +3,4 @@
 2026-02-07 07:52:06 [ERROR] [Context.OpenGL] (aengine.context.cpp:151 void __cdecl `anonymous-namespace'::opengl_initialize_adapter(void)) - init exception: [ OpenGL ] -  Failed to build/ensure quad pipeline
 2026-02-07 11:11:28 [ERROR] [Context.OpenGL] (aengine.context.cpp:151 void __cdecl `anonymous-namespace'::opengl_initialize_adapter(void)) - init exception: [ OpenGL ] -  Failed to build/ensure quad pipeline
 2026-02-07 11:11:50 [ERROR] [Context.OpenGL] (aengine.context.cpp:151 void __cdecl `anonymous-namespace'::opengl_initialize_adapter(void)) - init exception: [ OpenGL ] -  Failed to build/ensure quad pipeline
+2026-02-07 11:24:37 [ERROR] [Context.OpenGL] (aengine.context.cpp:151 void __cdecl `anonymous-namespace'::opengl_initialize_adapter(void)) - init exception: [ OpenGL ] -  Failed to build/ensure quad pipeline
