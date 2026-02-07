@@ -1,0 +1,61 @@
+Code File Inventory (path -> purpose)
+
+Engine/examples/AppExample/src/app.cpp -> Sample application implementing the app_api callbacks; polls for ESC, prints frame timing stats, and handles init/shutdown logging.
+Engine/examples/YourStaticLib/framework.h -> Windows lean header macro setup for the static library example.
+Engine/examples/YourStaticLib/pch.cpp -> Translation unit to build the precompiled header for the static library example.
+Engine/examples/YourStaticLib/pch.h -> Precompiled header definition for the static library example.
+Engine/examples/YourStaticLib/YourStaticLib.cpp -> Example static library implementation stub (fnYourStaticLib).
+
+Engine/include/_epoch.stl_types.hpp -> Central STL include bundle plus epoch::string wrapper, view/span adapters, comparison helpers, and std hash/format specializations.
+Engine/include/app_api.h -> C ABI for host/app callbacks (init/tick/quit/shutdown) used by the runtime.
+Engine/include/epoch.api_types.hpp -> ABI-safe core types (string_view, span, function_ref) and basic type aliases.
+Engine/include/epoch.common.hpp -> Common fixed-width type aliases and Handle template for typed IDs.
+Engine/include/epoch.config.hpp -> Feature toggle configuration for renderer backends and options.
+Engine/include/main.h -> Placeholder library-owned header for non-module declarations.
+
+Engine/modules/core.assert.ixx -> Module interface for assert helpers (always-on and debug-only checks).
+Engine/modules/core.env.ixx -> Module interface for environment variable get/set/unset.
+Engine/modules/core.error.ixx -> Module interface defining error codes, err/result types, and helpers.
+Engine/modules/core.format.ixx -> Module interface for format helpers wrapping std::format/vformat.
+Engine/modules/core.id.ixx -> Module interface defining strong_id typed identifier template.
+Engine/modules/core.log.ixx -> Module interface for logging API and configuration controls.
+Engine/modules/core.math.ixx -> Module interface for math helpers (clamp/lerp/angles/align).
+Engine/modules/core.path.ixx -> Module interface for executable path utilities and path helpers.
+Engine/modules/core.string.ixx -> Module interface for string trimming, splitting, and joining.
+Engine/modules/core.time.ixx -> Module interface for timing utilities and frame_clock.
+Engine/modules/epoch.assets.streaming.ixx -> Asset streaming queue types (requests, streamer).
+Engine/modules/epoch.ecs.ixx -> ECS world and sparse-set component storage implementation.
+Engine/modules/epoch.engine.ixx -> Engine facade (config, init/shutdown, access to systems/events/world).
+Engine/modules/epoch.events.ixx -> Type-safe event bus and ring buffer helpers.
+Engine/modules/epoch.perf.select.ixx -> Performance tier selection logic based on capabilities/env override.
+Engine/modules/epoch.perf.tier.ixx -> Performance tier definitions and frame limiter implementation.
+Engine/modules/epoch.platform.budgets.ixx -> Budget and frame policy structs with policy computation.
+Engine/modules/epoch.platform.capabilities.ixx -> GPU capabilities model and tier key derivation.
+Engine/modules/epoch.platform.context.ixx -> Graphics context interface and creation API.
+Engine/modules/epoch.platform.window.ixx -> Window system interface, window/event types, creation API.
+Engine/modules/epoch.render.bindings.ixx -> Resource binding model selection and binding table.
+Engine/modules/epoch.render.device.ixx -> Render device interface, buffer/texture descriptors, command context API.
+Engine/modules/epoch.render.device.null.ixx -> Null render device implementation for the render device interface.
+Engine/modules/epoch.render.graph.ixx -> Render graph builder/compiled graph types and API.
+Engine/modules/epoch.render.streaming.feedback.ixx -> Converts render feedback records into asset streaming requests.
+Engine/modules/epoch.render.visibility.ixx -> Visibility buffer resources and render graph pass declarations.
+Engine/modules/epoch.systems.ixx -> System interface, factory helpers, and registry API.
+Engine/modules/runtime.ixx -> Runtime module interface exposing run().
+
+Engine/src/core.assert.cpp -> Implements assert helpers, logging failures and terminating (DebugBreak on Windows).
+Engine/src/core.env.cpp -> Implements environment variable get/set/unset for Windows and POSIX.
+Engine/src/core.error.cpp -> Placeholder implementation unit for core.error module.
+Engine/src/core.id.cpp -> Placeholder implementation unit for core.id module.
+Engine/src/core.log.cpp -> Logging implementation with console/file/debugger sinks and formatting.
+Engine/src/core.math.cpp -> Placeholder implementation unit for core.math module.
+Engine/src/core.path.cpp -> Implements executable path discovery and path helpers.
+Engine/src/core.string.cpp -> Implements trim/split/join string utilities.
+Engine/src/core.time.cpp -> Implements timing utilities and frame_clock ticking.
+Engine/src/epoch.engine.cpp -> Engine implementation (init, event pumping, update, shutdown).
+Engine/src/epoch.headers.cpp -> TU to force include of config/common headers (empty implementation).
+Engine/src/epoch.platform.context.cpp -> Null graphics context implementation and factory for context creation.
+Engine/src/epoch.platform.window.cpp -> Win32 window system implementation and non-Windows null window system.
+Engine/src/epoch.render.graph.cpp -> Render graph builder/compiled graph implementation.
+Engine/src/epoch.systems.cpp -> System registry implementation (registration, dependency order, lifecycle).
+Engine/src/main.cpp -> Test harness for core modules, then launches runtime::run().
+Engine/src/runtime.cpp -> Main runtime loop: loads app callbacks, creates window/context, runs frame loop with perf tier.

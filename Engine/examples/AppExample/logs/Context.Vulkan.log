@@ -1,0 +1,3 @@
+2026-02-07 07:45:11 [ERROR] [Context.Vulkan] (aengine.context.cpp:211 void __cdecl `anonymous-namespace'::vulkan_initialize_adapter(void)) - init exception: [ Vulkan ] -  SPIR-V size is not a multiple of 4 bytes.
+2026-02-07 07:46:02 [ERROR] [Context.Vulkan] (aengine.context.cpp:211 void __cdecl `anonymous-namespace'::vulkan_initialize_adapter(void)) - init exception: [ Vulkan ] -  SPIR-V size is not a multiple of 4 bytes.
+2026-02-07 07:52:06 [ERROR] [Context.Vulkan] (aengine.context.cpp:211 void __cdecl `anonymous-namespace'::vulkan_initialize_adapter(void)) - init exception: [ Vulkan ] -  SPIR-V size is not a multiple of 4 bytes.

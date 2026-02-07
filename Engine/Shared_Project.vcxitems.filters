@@ -1,0 +1,819 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ItemGroup>
+    <Filter Include="Header Files">
+      <UniqueIdentifier>{b5fc04ac-1dd5-4281-8d23-8c2ffa1c4ead}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source Files">
+      <UniqueIdentifier>{a7f92342-cbf6-4740-a72e-9431d18c92fd}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Module Files">
+      <UniqueIdentifier>{29ed1d74-35fc-4c0e-befa-312097ba86a6}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source Files\epoch">
+      <UniqueIdentifier>{a3e3a1ba-dcff-4551-a299-8173b12a2232}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source Files\epoch\utility">
+      <UniqueIdentifier>{89ecb11f-e77a-49a2-aa30-f992ae802e08}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source Files\epoch\platform">
+      <UniqueIdentifier>{10f287b2-53a7-48c6-9c46-83306d7c9f78}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Module Files\epoch">
+      <UniqueIdentifier>{e7fa2e14-d80c-4dd2-954e-8d36a50b6998}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Module Files\epoch\render">
+      <UniqueIdentifier>{e77aa93d-71dd-4984-85c5-092a886bfdc9}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Module Files\epoch\assets">
+      <UniqueIdentifier>{36857f68-8624-4d1f-bb14-f69ab806f6e0}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Module Files\epoch\platform">
+      <UniqueIdentifier>{499f9b16-3a01-4316-a92b-e7cc67139bc6}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Module Files\epoch\utility">
+      <UniqueIdentifier>{a4411c75-9036-4b48-9623-63c322a1e446}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Module Files\epoch\ecs">
+      <UniqueIdentifier>{d8fbdfe2-ee23-40b3-8af4-10c16b6ebda5}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Module Files\epoch\events">
+      <UniqueIdentifier>{93b98604-49f0-4a1f-86e3-d3d90812cab2}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source Files\epoch\core">
+      <UniqueIdentifier>{1728c4bc-3b04-4194-8f40-dcfa919ba4a1}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Module Files\epoch\core">
+      <UniqueIdentifier>{7a9a7256-3e47-43c3-b5ba-ab72b7341859}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source Files\epoch\editor">
+      <UniqueIdentifier>{e284b58e-4060-4850-a2a4-a3c1f2a466f6}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Header Files\epoch">
+      <UniqueIdentifier>{d0e620d4-da20-4dd9-a41e-a17944ecbb29}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Header Files\epoch\editor">
+      <UniqueIdentifier>{d8793b09-cf5b-40f8-bc65-3bc90ccc5f5b}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Resource Files">
+      <UniqueIdentifier>{48db550a-3a1d-40a4-b201-1ae26cc21df9}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Module Files\epoch\editor">
+      <UniqueIdentifier>{5efaee78-6a7b-47da-91a1-822271461d0c}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Module Files\gui">
+      <UniqueIdentifier>{783837ec-ef49-4818-8c82-b95dcd9c4049}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source Files\gui">
+      <UniqueIdentifier>{e1f6441b-285f-4a79-bf34-2ffc40ae3535}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Module Files\almond">
+      <UniqueIdentifier>{0ce15498-4f18-45e4-8035-36da1a7ba48b}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Module Files\almond\context">
+      <UniqueIdentifier>{bbea9fd8-8f3a-45d4-877e-cbd7af7adce6}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Module Files\almond\context\noop_headless">
+      <UniqueIdentifier>{6b5ffebe-3a95-4fc7-8c04-8211698c808b}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Module Files\almond\context\opengl">
+      <UniqueIdentifier>{e9afcf08-75a9-4004-b8de-971c6ff4bab0}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Module Files\almond\context\raylib">
+      <UniqueIdentifier>{8530a077-8df6-4aca-9344-f13425b12b31}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Module Files\almond\context\sdl">
+      <UniqueIdentifier>{84af0956-78ce-4779-b4d1-55a653b508c6}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Module Files\almond\context\sfml">
+      <UniqueIdentifier>{680fb1d4-ee48-4354-9c36-901fdc7c7f78}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Module Files\almond\context\vulkan">
+      <UniqueIdentifier>{f5248e55-5633-421c-ba5a-abb6615f18d0}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Module Files\almond\context\software">
+      <UniqueIdentifier>{b5bc0740-b869-4a50-91f9-b4f041adce28}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source Files\almond">
+      <UniqueIdentifier>{2f79b6d8-eb5f-4e14-a445-d70fef338645}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source Files\almond\context">
+      <UniqueIdentifier>{5699efc1-2167-44fa-9131-e445e3f0a4c3}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source Files\almond\context\raylib">
+      <UniqueIdentifier>{47c4a1bb-0f10-4e4c-92d0-37fa920158c3}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source Files\almond\context\vulkan">
+      <UniqueIdentifier>{78bac720-9fd9-4c0e-8ec9-c0de5ab2fd4c}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source Files\almond\scripting">
+      <UniqueIdentifier>{aefa832c-0b6a-44a9-97d9-61067bfe775a}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source Files\almond\tests">
+      <UniqueIdentifier>{f8a1ba4a-c964-45b5-a99a-e7a6016409d3}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source Files\almond\utility">
+      <UniqueIdentifier>{ff6d0cd6-ac05-4334-918c-298a2d8bc63b}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Header Files\almond">
+      <UniqueIdentifier>{dd9b188e-f150-47f5-9877-9a298179fd47}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Module Files\almond\utility">
+      <UniqueIdentifier>{520c8623-980c-4650-b8ef-00835a20ff00}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Module Files\almond\scripting">
+      <UniqueIdentifier>{a4140ce9-a1ef-48af-a25e-0d2139e563e1}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Module Files\almond\textures">
+      <UniqueIdentifier>{2903dcaa-0da8-469b-811d-fecff3d14587}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Module Files\almond\games">
+      <UniqueIdentifier>{d82bf54d-c0cc-4262-83de-0fd95ef93754}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Module Files\almond\gui">
+      <UniqueIdentifier>{2a7c9f5a-2ec2-4038-9b26-7dfef40b6619}</UniqueIdentifier>
+    </Filter>
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="$(MSBuildThisFileDirectory)systems\ai\ai_service.hpp">
+      <Filter>Header Files\epoch\editor</Filter>
+    </ClInclude>
+    <ClInclude Include="$(MSBuildThisFileDirectory)include\_epoch.stl_types.hpp">
+      <Filter>Header Files\epoch</Filter>
+    </ClInclude>
+    <ClInclude Include="$(MSBuildThisFileDirectory)include\app_api.h">
+      <Filter>Header Files\epoch</Filter>
+    </ClInclude>
+    <ClInclude Include="$(MSBuildThisFileDirectory)include\epoch.api_types.hpp">
+      <Filter>Header Files\epoch</Filter>
+    </ClInclude>
+    <ClInclude Include="$(MSBuildThisFileDirectory)include\epoch.common.hpp">
+      <Filter>Header Files\epoch</Filter>
+    </ClInclude>
+    <ClInclude Include="$(MSBuildThisFileDirectory)include\epoch.config.hpp">
+      <Filter>Header Files\epoch</Filter>
+    </ClInclude>
+    <ClInclude Include="$(MSBuildThisFileDirectory)include\main.h">
+      <Filter>Header Files\epoch</Filter>
+    </ClInclude>
+    <ClInclude Include="$(MSBuildThisFileDirectory)src\pch.h">
+      <Filter>Resource Files</Filter>
+    </ClInclude>
+    <ClInclude Include="$(MSBuildThisFileDirectory)src\resource.h">
+      <Filter>Resource Files</Filter>
+    </ClInclude>
+    <ClInclude Include="$(MSBuildThisFileDirectory)include\acontext.vulkan.hpp">
+      <Filter>Header Files\almond</Filter>
+    </ClInclude>
+    <ClInclude Include="$(MSBuildThisFileDirectory)include\aengine.config.hpp">
+      <Filter>Header Files\almond</Filter>
+    </ClInclude>
+    <ClInclude Include="$(MSBuildThisFileDirectory)include\aengine.hpp">
+      <Filter>Header Files\almond</Filter>
+    </ClInclude>
+    <ClInclude Include="$(MSBuildThisFileDirectory)include\aframework.hpp">
+      <Filter>Header Files\almond</Filter>
+    </ClInclude>
+  </ItemGroup>
+  <ItemGroup>
+    <ClCompile Include="$(MSBuildThisFileDirectory)src\main.cpp">
+      <Filter>Source Files\epoch\core</Filter>
+    </ClCompile>
+    <ClCompile Include="$(MSBuildThisFileDirectory)src\core.time.cpp">
+      <Filter>Source Files\epoch\utility</Filter>
+    </ClCompile>
+    <ClCompile Include="$(MSBuildThisFileDirectory)src\core.string.cpp">
+      <Filter>Source Files\epoch\utility</Filter>
+    </ClCompile>
+    <ClCompile Include="$(MSBuildThisFileDirectory)src\core.path.cpp">
+      <Filter>Source Files\epoch\utility</Filter>
+    </ClCompile>
+    <ClCompile Include="$(MSBuildThisFileDirectory)src\core.math.cpp">
+      <Filter>Source Files\epoch\utility</Filter>
+    </ClCompile>
+    <ClCompile Include="$(MSBuildThisFileDirectory)src\core.log.cpp">
+      <Filter>Source Files\epoch\utility</Filter>
+    </ClCompile>
+    <ClCompile Include="$(MSBuildThisFileDirectory)src\core.id.cpp">
+      <Filter>Source Files\epoch\utility</Filter>
+    </ClCompile>
+    <ClCompile Include="$(MSBuildThisFileDirectory)src\core.error.cpp">
+      <Filter>Source Files\epoch\utility</Filter>
+    </ClCompile>
+    <ClCompile Include="$(MSBuildThisFileDirectory)src\core.env.cpp">
+      <Filter>Source Files\epoch\utility</Filter>
+    </ClCompile>
+    <ClCompile Include="$(MSBuildThisFileDirectory)src\core.assert.cpp">
+      <Filter>Source Files\epoch\utility</Filter>
+    </ClCompile>
+    <ClCompile Include="$(MSBuildThisFileDirectory)src\runtime.cpp">
+      <Filter>Source Files\epoch\core</Filter>
+    </ClCompile>
+    <ClCompile Include="$(MSBuildThisFileDirectory)modules\core.assert.ixx">
+      <Filter>Module Files\epoch\utility</Filter>
+    </ClCompile>
+    <ClCompile Include="$(MSBuildThisFileDirectory)modules\core.env.ixx">
+      <Filter>Module Files\epoch\utility</Filter>
+    </ClCompile>
+    <ClCompile Include="$(MSBuildThisFileDirectory)modules\core.error.ixx">
+      <Filter>Module Files\epoch\utility</Filter>
+    </ClCompile>
+    <ClCompile Include="$(MSBuildThisFileDirectory)modules\core.format.ixx">
+      <Filter>Module Files\epoch\utility</Filter>
+    </ClCompile>
+    <ClCompile Include="$(MSBuildThisFileDirectory)modules\core.id.ixx">
+      <Filter>Module Files\epoch\utility</Filter>
+    </ClCompile>
+    <ClCompile Include="$(MSBuildThisFileDirectory)modules\core.log.ixx">
+      <Filter>Module Files\epoch\utility</Filter>
+    </ClCompile>
+    <ClCompile Include="$(MSBuildThisFileDirectory)modules\core.math.ixx">
+      <Filter>Module Files\epoch\utility</Filter>
+    </ClCompile>
+    <ClCompile Include="$(MSBuildThisFileDirectory)modules\core.path.ixx">
+      <Filter>Module Files\epoch\utility</Filter>
+    </ClCompile>
+    <ClCompile Include="$(MSBuildThisFileDirectory)modules\core.string.ixx">
+      <Filter>Module Files\epoch\utility</Filter>
+    </ClCompile>
+    <ClCompile Include="$(MSBuildThisFileDirectory)modules\core.time.ixx">
+      <Filter>Module Files\epoch\utility</Filter>
+    </ClCompile>
+    <ClCompile Include="$(MSBuildThisFileDirectory)src\epoch.headers.cpp">
+      <Filter>Source Files\epoch\core</Filter>
+    </ClCompile>
+    <ClCompile Include="$(MSBuildThisFileDirectory)modules\epoch.render.bindings.ixx">
+      <Filter>Module Files\epoch\render</Filter>
+    </ClCompile>
+    <ClCompile Include="$(MSBuildThisFileDirectory)modules\epoch.render.device.ixx">
+      <Filter>Module Files\epoch\render</Filter>
+    </ClCompile>
+    <ClCompile Include="$(MSBuildThisFileDirectory)modules\epoch.render.device.null.ixx">
+      <Filter>Module Files\epoch\render</Filter>
+    </ClCompile>
+    <ClCompile Include="$(MSBuildThisFileDirectory)modules\epoch.render.graph.ixx">
+      <Filter>Module Files\epoch\render</Filter>
+    </ClCompile>
+    <ClCompile Include="$(MSBuildThisFileDirectory)modules\epoch.render.streaming.feedback.ixx">
+      <Filter>Module Files\epoch\render</Filter>
+    </ClCompile>
+    <ClCompile Include="$(MSBuildThisFileDirectory)modules\epoch.render.visibility.ixx">
+      <Filter>Module Files\epoch\render</Filter>
+    </ClCompile>
+    <ClCompile Include="$(MSBuildThisFileDirectory)modules\epoch.assets.streaming.ixx">
+      <Filter>Module Files\epoch\assets</Filter>
+    </ClCompile>
+    <ClCompile Include="$(MSBuildThisFileDirectory)modules\epoch.platform.capabilities.ixx">
+      <Filter>Module Files\epoch\platform</Filter>
+    </ClCompile>
+    <ClCompile Include="$(MSBuildThisFileDirectory)modules\epoch.platform.budgets.ixx">
+      <Filter>Module Files\epoch\platform</Filter>
+    </ClCompile>
+    <ClCompile Include="$(MSBuildThisFileDirectory)src\epoch.platform.window.cpp">
+      <Filter>Source Files\epoch\platform</Filter>
+    </ClCompile>
+    <ClCompile Include="$(MSBuildThisFileDirectory)src\epoch.platform.context.cpp">
+      <Filter>Source Files\epoch\platform</Filter>
+    </ClCompile>
+    <ClCompile Include="$(MSBuildThisFileDirectory)src\epoch.engine.cpp">
+      <Filter>Source Files\epoch\core</Filter>
+    </ClCompile>
+    <ClCompile Include="$(MSBuildThisFileDirectory)modules\epoch.events.ixx">
+      <Filter>Module Files\epoch\events</Filter>
+    </ClCompile>
+    <ClCompile Include="$(MSBuildThisFileDirectory)modules\epoch.ecs.ixx">
+      <Filter>Module Files\epoch\ecs</Filter>
+    </ClCompile>
+    <ClCompile Include="$(MSBuildThisFileDirectory)modules\epoch.platform.window.ixx">
+      <Filter>Module Files\epoch\platform</Filter>
+    </ClCompile>
+    <ClCompile Include="$(MSBuildThisFileDirectory)modules\epoch.platform.context.ixx">
+      <Filter>Module Files\epoch\platform</Filter>
+    </ClCompile>
+    <ClCompile Include="$(MSBuildThisFileDirectory)src\epoch.render.graph.cpp">
+      <Filter>Source Files\epoch\core</Filter>
+    </ClCompile>
+    <ClCompile Include="$(MSBuildThisFileDirectory)src\epoch.systems.cpp">
+      <Filter>Source Files\epoch\core</Filter>
+    </ClCompile>
+    <ClCompile Include="$(MSBuildThisFileDirectory)modules\epoch.perf.tier.ixx">
+      <Filter>Module Files\epoch\platform</Filter>
+    </ClCompile>
+    <ClCompile Include="$(MSBuildThisFileDirectory)modules\epoch.perf.select.ixx">
+      <Filter>Module Files\epoch\platform</Filter>
+    </ClCompile>
+    <ClCompile Include="$(MSBuildThisFileDirectory)modules\epoch.engine.ixx">
+      <Filter>Module Files\epoch\core</Filter>
+    </ClCompile>
+    <ClCompile Include="$(MSBuildThisFileDirectory)modules\epoch.systems.ixx">
+      <Filter>Module Files\epoch\core</Filter>
+    </ClCompile>
+    <ClCompile Include="$(MSBuildThisFileDirectory)modules\runtime.ixx">
+      <Filter>Module Files\epoch\core</Filter>
+    </ClCompile>
+    <ClCompile Include="$(MSBuildThisFileDirectory)src\aeditor.cpp">
+      <Filter>Source Files\epoch\editor</Filter>
+    </ClCompile>
+    <ClCompile Include="$(MSBuildThisFileDirectory)src\epoch.ai.cpp">
+      <Filter>Source Files\epoch\core</Filter>
+    </ClCompile>
+    <ClCompile Include="$(MSBuildThisFileDirectory)modules\epoch.ai.ixx">
+      <Filter>Module Files\epoch\core</Filter>
+    </ClCompile>
+    <ClCompile Include="$(MSBuildThisFileDirectory)modules\aeditor.ixx">
+      <Filter>Module Files\epoch\editor</Filter>
+    </ClCompile>
+    <ClCompile Include="$(MSBuildThisFileDirectory)modules\aengine.gui.ixx">
+      <Filter>Module Files\gui</Filter>
+    </ClCompile>
+    <ClCompile Include="$(MSBuildThisFileDirectory)src\aengine.gui.cpp">
+      <Filter>Source Files\gui</Filter>
+    </ClCompile>
+    <ClCompile Include="$(MSBuildThisFileDirectory)modules\aengine.gui.internal.ixx">
+      <Filter>Module Files\gui</Filter>
+    </ClCompile>
+    <ClCompile Include="$(MSBuildThisFileDirectory)modules\aengine.gui.backend_upload.ixx">
+      <Filter>Module Files\gui</Filter>
+    </ClCompile>
+    <ClCompile Include="$(MSBuildThisFileDirectory)modules\aengine.gui.text.ixx">
+      <Filter>Module Files\gui</Filter>
+    </ClCompile>
+    <ClCompile Include="$(MSBuildThisFileDirectory)modules\aengine.gui.frame_canvas.ixx">
+      <Filter>Module Files\gui</Filter>
+    </ClCompile>
+    <ClCompile Include="$(MSBuildThisFileDirectory)modules\aengine.gui.window_modal.ixx">
+      <Filter>Module Files\gui</Filter>
+    </ClCompile>
+    <ClCompile Include="$(MSBuildThisFileDirectory)modules\aengine.gui.widgets.buttons.ixx">
+      <Filter>Module Files\gui</Filter>
+    </ClCompile>
+    <ClCompile Include="$(MSBuildThisFileDirectory)modules\aengine.gui.widgets.text.ixx">
+      <Filter>Module Files\gui</Filter>
+    </ClCompile>
+    <ClCompile Include="$(MSBuildThisFileDirectory)modules\aecs.components.ixx">
+      <Filter>Module Files\almond</Filter>
+    </ClCompile>
+    <ClCompile Include="$(MSBuildThisFileDirectory)modules\aecs.entitycomponentmanager.ixx">
+      <Filter>Module Files\almond</Filter>
+    </ClCompile>
+    <ClCompile Include="$(MSBuildThisFileDirectory)modules\aecs.entityhistory.ixx">
+      <Filter>Module Files\almond</Filter>
+    </ClCompile>
+    <ClCompile Include="$(MSBuildThisFileDirectory)modules\aecs.internal_private.ixx">
+      <Filter>Module Files\almond</Filter>
+    </ClCompile>
+    <ClCompile Include="$(MSBuildThisFileDirectory)modules\aecs.ixx">
+      <Filter>Module Files\almond</Filter>
+    </ClCompile>
+    <ClCompile Include="$(MSBuildThisFileDirectory)modules\aecs.storage.ixx">
+      <Filter>Module Files\almond</Filter>
+    </ClCompile>
+    <ClCompile Include="$(MSBuildThisFileDirectory)modules\aengine.bindings.ixx">
+      <Filter>Module Files\almond</Filter>
+    </ClCompile>
+    <ClCompile Include="$(MSBuildThisFileDirectory)modules\aengine.cli.ixx">
+      <Filter>Module Files\almond</Filter>
+    </ClCompile>
+    <ClCompile Include="$(MSBuildThisFileDirectory)modules\aengine.context.commandqueue.ixx">
+      <Filter>Module Files\almond</Filter>
+    </ClCompile>
+    <ClCompile Include="$(MSBuildThisFileDirectory)modules\aengine.context.control.ixx">
+      <Filter>Module Files\almond</Filter>
+    </ClCompile>
+    <ClCompile Include="$(MSBuildThisFileDirectory)modules\aengine.context.multiplexer.ixx">
+      <Filter>Module Files\almond</Filter>
+    </ClCompile>
+    <ClCompile Include="$(MSBuildThisFileDirectory)modules\aengine.context.platform.utils.ixx">
+      <Filter>Module Files\almond</Filter>
+    </ClCompile>
+    <ClCompile Include="$(MSBuildThisFileDirectory)modules\aengine.context.type.ixx">
+      <Filter>Module Files\almond</Filter>
+    </ClCompile>
+    <ClCompile Include="$(MSBuildThisFileDirectory)modules\aengine.context.window.ixx">
+      <Filter>Module Files\almond</Filter>
+    </ClCompile>
+    <ClCompile Include="$(MSBuildThisFileDirectory)modules\aengine.core.commandline.ixx">
+      <Filter>Module Files\almond</Filter>
+    </ClCompile>
+    <ClCompile Include="$(MSBuildThisFileDirectory)modules\aengine.core.context.ixx">
+      <Filter>Module Files\almond</Filter>
+    </ClCompile>
+    <ClCompile Include="$(MSBuildThisFileDirectory)modules\aengine.core.logger.ixx">
+      <Filter>Module Files\almond</Filter>
+    </ClCompile>
+    <ClCompile Include="$(MSBuildThisFileDirectory)modules\aengine.core.time.ixx">
+      <Filter>Module Files\almond</Filter>
+    </ClCompile>
+    <ClCompile Include="$(MSBuildThisFileDirectory)modules\aengine.core.types.ixx">
+      <Filter>Module Files\almond</Filter>
+    </ClCompile>
+    <ClCompile Include="$(MSBuildThisFileDirectory)modules\aengine.core.utilities.ixx">
+      <Filter>Module Files\almond</Filter>
+    </ClCompile>
+    <ClCompile Include="$(MSBuildThisFileDirectory)modules\aengine.diagnostics.ixx">
+      <Filter>Module Files\almond</Filter>
+    </ClCompile>
+    <ClCompile Include="$(MSBuildThisFileDirectory)modules\aengine.engine_components.ixx">
+      <Filter>Module Files\almond</Filter>
+    </ClCompile>
+    <ClCompile Include="$(MSBuildThisFileDirectory)modules\aengine.event.movement.ixx">
+      <Filter>Module Files\almond</Filter>
+    </ClCompile>
+    <ClCompile Include="$(MSBuildThisFileDirectory)modules\aengine.eventsystem.ixx">
+      <Filter>Module Files\almond</Filter>
+    </ClCompile>
+    <ClCompile Include="$(MSBuildThisFileDirectory)modules\aengine.gui.menu.ixx">
+      <Filter>Module Files\almond</Filter>
+    </ClCompile>
+    <ClCompile Include="$(MSBuildThisFileDirectory)modules\aengine.handles.ixx">
+      <Filter>Module Files\almond</Filter>
+    </ClCompile>
+    <ClCompile Include="$(MSBuildThisFileDirectory)modules\aengine.input.ixx">
+      <Filter>Module Files\almond</Filter>
+    </ClCompile>
+    <ClCompile Include="$(MSBuildThisFileDirectory)modules\aengine.platform.ixx">
+      <Filter>Module Files\almond</Filter>
+    </ClCompile>
+    <ClCompile Include="$(MSBuildThisFileDirectory)modules\aengine.saveload.system.ixx">
+      <Filter>Module Files\almond</Filter>
+    </ClCompile>
+    <ClCompile Include="$(MSBuildThisFileDirectory)modules\aengine.scripting.compiler.ixx">
+      <Filter>Module Files\almond</Filter>
+    </ClCompile>
+    <ClCompile Include="$(MSBuildThisFileDirectory)modules\aengine.systems.ixx">
+      <Filter>Module Files\almond</Filter>
+    </ClCompile>
+    <ClCompile Include="$(MSBuildThisFileDirectory)modules\aengine.taskgraph.dotsystem.ixx">
+      <Filter>Module Files\almond</Filter>
+    </ClCompile>
+    <ClCompile Include="$(MSBuildThisFileDirectory)modules\aengine.telemetry.ixx">
+      <Filter>Module Files\almond</Filter>
+    </ClCompile>
+    <ClCompile Include="$(MSBuildThisFileDirectory)modules\aengine.updater.config.ixx">
+      <Filter>Module Files\almond</Filter>
+    </ClCompile>
+    <ClCompile Include="$(MSBuildThisFileDirectory)modules\aengine.updater.ixx">
+      <Filter>Module Files\almond</Filter>
+    </ClCompile>
+    <ClCompile Include="$(MSBuildThisFileDirectory)modules\aengine.updater.system.ixx">
+      <Filter>Module Files\almond</Filter>
+    </ClCompile>
+    <ClCompile Include="$(MSBuildThisFileDirectory)modules\aengine.updater.tools.ixx">
+      <Filter>Module Files\almond</Filter>
+    </ClCompile>
+    <ClCompile Include="$(MSBuildThisFileDirectory)modules\aengine.version.ixx">
+      <Filter>Module Files\almond</Filter>
+    </ClCompile>
+    <ClCompile Include="$(MSBuildThisFileDirectory)modules\aentity.ixx">
+      <Filter>Module Files\almond</Filter>
+    </ClCompile>
+    <ClCompile Include="$(MSBuildThisFileDirectory)modules\aframework.ixx">
+      <Filter>Module Files\almond</Filter>
+    </ClCompile>
+    <ClCompile Include="$(MSBuildThisFileDirectory)modules\almondshell.ixx">
+      <Filter>Module Files\almond</Filter>
+    </ClCompile>
+    <ClCompile Include="$(MSBuildThisFileDirectory)modules\ampmcboundedqueue.ixx">
+      <Filter>Module Files\almond</Filter>
+    </ClCompile>
+    <ClCompile Include="$(MSBuildThisFileDirectory)modules\anet.ixx">
+      <Filter>Module Files\almond</Filter>
+    </ClCompile>
+    <ClCompile Include="$(MSBuildThisFileDirectory)modules\aplatformpump.ixx">
+      <Filter>Module Files\almond</Filter>
+    </ClCompile>
+    <ClCompile Include="$(MSBuildThisFileDirectory)modules\ascene.ixx">
+      <Filter>Module Files\almond</Filter>
+    </ClCompile>
+    <ClCompile Include="$(MSBuildThisFileDirectory)modules\asceneserializer.ixx">
+      <Filter>Module Files\almond</Filter>
+    </ClCompile>
+    <ClCompile Include="$(MSBuildThisFileDirectory)modules\ascenesnapshot.ixx">
+      <Filter>Module Files\almond</Filter>
+    </ClCompile>
+    <ClCompile Include="$(MSBuildThisFileDirectory)modules\acontext.noop.context.ixx">
+      <Filter>Module Files\almond\context\noop_headless</Filter>
+    </ClCompile>
+    <ClCompile Include="$(MSBuildThisFileDirectory)modules\acontext.opengl.context.ixx">
+      <Filter>Module Files\almond\context\opengl</Filter>
+    </ClCompile>
+    <ClCompile Include="$(MSBuildThisFileDirectory)modules\acontext.opengl.platform.ixx">
+      <Filter>Module Files\almond\context\opengl</Filter>
+    </ClCompile>
+    <ClCompile Include="$(MSBuildThisFileDirectory)modules\acontext.opengl.quad.ixx">
+      <Filter>Module Files\almond\context\opengl</Filter>
+    </ClCompile>
+    <ClCompile Include="$(MSBuildThisFileDirectory)modules\acontext.opengl.renderer.ixx">
+      <Filter>Module Files\almond\context\opengl</Filter>
+    </ClCompile>
+    <ClCompile Include="$(MSBuildThisFileDirectory)modules\acontext.opengl.state.ixx">
+      <Filter>Module Files\almond\context\opengl</Filter>
+    </ClCompile>
+    <ClCompile Include="$(MSBuildThisFileDirectory)modules\acontext.opengl.textures.ixx">
+      <Filter>Module Files\almond\context\opengl</Filter>
+    </ClCompile>
+    <ClCompile Include="$(MSBuildThisFileDirectory)modules\acontext.raylib.api.ixx">
+      <Filter>Module Files\almond\context\raylib</Filter>
+    </ClCompile>
+    <ClCompile Include="$(MSBuildThisFileDirectory)modules\acontext.raylib.context.ixx">
+      <Filter>Module Files\almond\context\raylib</Filter>
+    </ClCompile>
+    <ClCompile Include="$(MSBuildThisFileDirectory)modules\acontext.raylib.context.win.ixx">
+      <Filter>Module Files\almond\context\raylib</Filter>
+    </ClCompile>
+    <ClCompile Include="$(MSBuildThisFileDirectory)modules\acontext.raylib.input.ixx">
+      <Filter>Module Files\almond\context\raylib</Filter>
+    </ClCompile>
+    <ClCompile Include="$(MSBuildThisFileDirectory)modules\acontext.raylib.renderer.ixx">
+      <Filter>Module Files\almond\context\raylib</Filter>
+    </ClCompile>
+    <ClCompile Include="$(MSBuildThisFileDirectory)modules\acontext.raylib.state.ixx">
+      <Filter>Module Files\almond\context\raylib</Filter>
+    </ClCompile>
+    <ClCompile Include="$(MSBuildThisFileDirectory)modules\acontext.raylib.textures.ixx">
+      <Filter>Module Files\almond\context\raylib</Filter>
+    </ClCompile>
+    <ClCompile Include="$(MSBuildThisFileDirectory)modules\acontext.sdl.context.ixx">
+      <Filter>Module Files\almond\context\sdl</Filter>
+    </ClCompile>
+    <ClCompile Include="$(MSBuildThisFileDirectory)modules\acontext.sdl.renderer.ixx">
+      <Filter>Module Files\almond\context\sdl</Filter>
+    </ClCompile>
+    <ClCompile Include="$(MSBuildThisFileDirectory)modules\acontext.sdl.state.ixx">
+      <Filter>Module Files\almond\context\sdl</Filter>
+    </ClCompile>
+    <ClCompile Include="$(MSBuildThisFileDirectory)modules\acontext.sdl.textures.ixx">
+      <Filter>Module Files\almond\context\sdl</Filter>
+    </ClCompile>
+    <ClCompile Include="$(MSBuildThisFileDirectory)modules\acontext.sfml.context.ixx">
+      <Filter>Module Files\almond\context\sfml</Filter>
+    </ClCompile>
+    <ClCompile Include="$(MSBuildThisFileDirectory)modules\acontext.sfml.renderer.ixx">
+      <Filter>Module Files\almond\context\sfml</Filter>
+    </ClCompile>
+    <ClCompile Include="$(MSBuildThisFileDirectory)modules\acontext.sfml.state.ixx">
+      <Filter>Module Files\almond\context\sfml</Filter>
+    </ClCompile>
+    <ClCompile Include="$(MSBuildThisFileDirectory)modules\acontext.sfml.textures.ixx">
+      <Filter>Module Files\almond\context\sfml</Filter>
+    </ClCompile>
+    <ClCompile Include="$(MSBuildThisFileDirectory)modules\acontext.vulkan.camera.ixx">
+      <Filter>Module Files\almond\context\vulkan</Filter>
+    </ClCompile>
+    <ClCompile Include="$(MSBuildThisFileDirectory)modules\acontext.vulkan.context.ixx">
+      <Filter>Module Files\almond\context\vulkan</Filter>
+    </ClCompile>
+    <ClCompile Include="$(MSBuildThisFileDirectory)modules\acontext.vulkan.context-api.ixx">
+      <Filter>Module Files\almond\context\vulkan</Filter>
+    </ClCompile>
+    <ClCompile Include="$(MSBuildThisFileDirectory)modules\acontext.vulkan.context-api_unit.ixx">
+      <Filter>Module Files\almond\context\vulkan</Filter>
+    </ClCompile>
+    <ClCompile Include="$(MSBuildThisFileDirectory)modules\acontext.vulkan.context-buffers.ixx">
+      <Filter>Module Files\almond\context\vulkan</Filter>
+    </ClCompile>
+    <ClCompile Include="$(MSBuildThisFileDirectory)modules\acontext.vulkan.context-commands.ixx">
+      <Filter>Module Files\almond\context\vulkan</Filter>
+    </ClCompile>
+    <ClCompile Include="$(MSBuildThisFileDirectory)modules\acontext.vulkan.context-depth.ixx">
+      <Filter>Module Files\almond\context\vulkan</Filter>
+    </ClCompile>
+    <ClCompile Include="$(MSBuildThisFileDirectory)modules\acontext.vulkan.context-descriptor.ixx">
+      <Filter>Module Files\almond\context\vulkan</Filter>
+    </ClCompile>
+    <ClCompile Include="$(MSBuildThisFileDirectory)modules\acontext.vulkan.context-device.ixx">
+      <Filter>Module Files\almond\context\vulkan</Filter>
+    </ClCompile>
+    <ClCompile Include="$(MSBuildThisFileDirectory)modules\acontext.vulkan.context-instance.ixx">
+      <Filter>Module Files\almond\context\vulkan</Filter>
+    </ClCompile>
+    <ClCompile Include="$(MSBuildThisFileDirectory)modules\acontext.vulkan.context-memory.ixx">
+      <Filter>Module Files\almond\context\vulkan</Filter>
+    </ClCompile>
+    <ClCompile Include="$(MSBuildThisFileDirectory)modules\acontext.vulkan.context-renderer.ixx">
+      <Filter>Module Files\almond\context\vulkan</Filter>
+    </ClCompile>
+    <ClCompile Include="$(MSBuildThisFileDirectory)modules\acontext.vulkan.context-runtime.ixx">
+      <Filter>Module Files\almond\context\vulkan</Filter>
+    </ClCompile>
+    <ClCompile Include="$(MSBuildThisFileDirectory)modules\acontext.vulkan.context-shader_pipeline.ixx">
+      <Filter>Module Files\almond\context\vulkan</Filter>
+    </ClCompile>
+    <ClCompile Include="$(MSBuildThisFileDirectory)modules\acontext.vulkan.context-shared_context.ixx">
+      <Filter>Module Files\almond\context\vulkan</Filter>
+    </ClCompile>
+    <ClCompile Include="$(MSBuildThisFileDirectory)modules\acontext.vulkan.context-shared_vk.ixx">
+      <Filter>Module Files\almond\context\vulkan</Filter>
+    </ClCompile>
+    <ClCompile Include="$(MSBuildThisFileDirectory)modules\acontext.vulkan.context-swapchain.ixx">
+      <Filter>Module Files\almond\context\vulkan</Filter>
+    </ClCompile>
+    <ClCompile Include="$(MSBuildThisFileDirectory)modules\acontext.vulkan.context-texture.ixx">
+      <Filter>Module Files\almond\context\vulkan</Filter>
+    </ClCompile>
+    <ClCompile Include="$(MSBuildThisFileDirectory)modules\acontext.vulkan.context-window.ixx">
+      <Filter>Module Files\almond\context\vulkan</Filter>
+    </ClCompile>
+    <ClCompile Include="$(MSBuildThisFileDirectory)modules\acontext.vulkan.meshcube.ixx">
+      <Filter>Module Files\almond\context\vulkan</Filter>
+    </ClCompile>
+    <ClCompile Include="$(MSBuildThisFileDirectory)modules\acontext.vulkan.platform.device.ixx">
+      <Filter>Module Files\almond\context\vulkan</Filter>
+    </ClCompile>
+    <ClCompile Include="$(MSBuildThisFileDirectory)modules\acontext.vulkan.platform.dispatcher.ixx">
+      <Filter>Module Files\almond\context\vulkan</Filter>
+    </ClCompile>
+    <ClCompile Include="$(MSBuildThisFileDirectory)modules\acontext.vulkan.platform.instance.ixx">
+      <Filter>Module Files\almond\context\vulkan</Filter>
+    </ClCompile>
+    <ClCompile Include="$(MSBuildThisFileDirectory)modules\acontext.vulkan.platform.loader.ixx">
+      <Filter>Module Files\almond\context\vulkan</Filter>
+    </ClCompile>
+    <ClCompile Include="$(MSBuildThisFileDirectory)modules\acontext.vulkan.quad.ixx">
+      <Filter>Module Files\almond\context\vulkan</Filter>
+    </ClCompile>
+    <ClCompile Include="$(MSBuildThisFileDirectory)modules\acontext.vulkan.triangle.ixx">
+      <Filter>Module Files\almond\context\vulkan</Filter>
+    </ClCompile>
+    <ClCompile Include="$(MSBuildThisFileDirectory)modules\acontext.softrenderer.context.ixx">
+      <Filter>Module Files\almond\context\software</Filter>
+    </ClCompile>
+    <ClCompile Include="$(MSBuildThisFileDirectory)modules\acontext.softrenderer.quad.ixx">
+      <Filter>Module Files\almond\context\software</Filter>
+    </ClCompile>
+    <ClCompile Include="$(MSBuildThisFileDirectory)modules\acontext.softrenderer.renderer.ixx">
+      <Filter>Module Files\almond\context\software</Filter>
+    </ClCompile>
+    <ClCompile Include="$(MSBuildThisFileDirectory)modules\acontext.softrenderer.state.ixx">
+      <Filter>Module Files\almond\context\software</Filter>
+    </ClCompile>
+    <ClCompile Include="$(MSBuildThisFileDirectory)modules\acontext.softrenderer.textures.ixx">
+      <Filter>Module Files\almond\context\software</Filter>
+    </ClCompile>
+    <ClCompile Include="$(MSBuildThisFileDirectory)src\aengine.cpp">
+      <Filter>Source Files\almond</Filter>
+    </ClCompile>
+    <ClCompile Include="$(MSBuildThisFileDirectory)src\aengine.context.cpp">
+      <Filter>Source Files\almond\context</Filter>
+    </ClCompile>
+    <ClCompile Include="$(MSBuildThisFileDirectory)src\aengine.context.multiplexer.linux.cpp">
+      <Filter>Source Files\almond\context</Filter>
+    </ClCompile>
+    <ClCompile Include="$(MSBuildThisFileDirectory)src\aengine.context.multiplexer.win.cpp">
+      <Filter>Source Files\almond\context</Filter>
+    </ClCompile>
+    <ClCompile Include="$(MSBuildThisFileDirectory)src\acontext.vulkan.context_buffers.cpp">
+      <Filter>Source Files\almond\context\vulkan</Filter>
+    </ClCompile>
+    <ClCompile Include="$(MSBuildThisFileDirectory)src\acontext.vulkan.context-texture.cpp">
+      <Filter>Source Files\almond\context\vulkan</Filter>
+    </ClCompile>
+    <ClCompile Include="$(MSBuildThisFileDirectory)src\acontext.vulkan.dispatch_storage.cpp">
+      <Filter>Source Files\almond\context\vulkan</Filter>
+    </ClCompile>
+    <ClCompile Include="$(MSBuildThisFileDirectory)src\acontext.vulkan.platform.context.cpp">
+      <Filter>Source Files\almond\context\vulkan</Filter>
+    </ClCompile>
+    <ClCompile Include="$(MSBuildThisFileDirectory)src\acontext.vulkan.platform.descriptors.cpp">
+      <Filter>Source Files\almond\context\vulkan</Filter>
+    </ClCompile>
+    <ClCompile Include="$(MSBuildThisFileDirectory)src\acontext.raylib.bridge.cpp">
+      <Filter>Source Files\almond\context\raylib</Filter>
+    </ClCompile>
+    <ClCompile Include="$(MSBuildThisFileDirectory)src\aengine.scripting.compiler.cpp">
+      <Filter>Source Files\almond\scripting</Filter>
+    </ClCompile>
+    <ClCompile Include="$(MSBuildThisFileDirectory)src\scripts\editor_launcher.ascript.cpp">
+      <Filter>Source Files\almond\scripting</Filter>
+    </ClCompile>
+    <ClCompile Include="$(MSBuildThisFileDirectory)src\renderer_smoke_harness.cpp">
+      <Filter>Source Files\almond\tests</Filter>
+    </ClCompile>
+    <ClCompile Include="$(MSBuildThisFileDirectory)src\afilewatch.cpp">
+      <Filter>Source Files\almond\utility</Filter>
+    </ClCompile>
+    <ClCompile Include="$(MSBuildThisFileDirectory)src\afont.renderer.cpp">
+      <Filter>Source Files\almond\utility</Filter>
+    </ClCompile>
+    <ClCompile Include="$(MSBuildThisFileDirectory)modules\autility.string.converter.ixx">
+      <Filter>Module Files\almond\utility</Filter>
+    </ClCompile>
+    <ClCompile Include="$(MSBuildThisFileDirectory)modules\autility.filewatch.ixx">
+      <Filter>Module Files\almond\utility</Filter>
+    </ClCompile>
+    <ClCompile Include="$(MSBuildThisFileDirectory)modules\autility.codeinspector.ixx">
+      <Filter>Module Files\almond\utility</Filter>
+    </ClCompile>
+    <ClCompile Include="$(MSBuildThisFileDirectory)modules\autility.atomicfunction.ixx">
+      <Filter>Module Files\almond\utility</Filter>
+    </ClCompile>
+    <ClCompile Include="$(MSBuildThisFileDirectory)modules\autility.allocator.ixx">
+      <Filter>Module Files\almond\utility</Filter>
+    </ClCompile>
+    <ClCompile Include="$(MSBuildThisFileDirectory)modules\aopenglfreetype.ixx">
+      <Filter>Module Files\almond\context\opengl</Filter>
+    </ClCompile>
+    <ClCompile Include="$(MSBuildThisFileDirectory)modules\aopengltriangle.ixx">
+      <Filter>Module Files\almond\context\opengl</Filter>
+    </ClCompile>
+    <ClCompile Include="$(MSBuildThisFileDirectory)modules\ascripting.system.ixx">
+      <Filter>Module Files\almond\scripting</Filter>
+    </ClCompile>
+    <ClCompile Include="$(MSBuildThisFileDirectory)modules\aatlas.texture.ixx">
+      <Filter>Module Files\almond\textures</Filter>
+    </ClCompile>
+    <ClCompile Include="$(MSBuildThisFileDirectory)modules\aatlas.manager.ixx">
+      <Filter>Module Files\almond\textures</Filter>
+    </ClCompile>
+    <ClCompile Include="$(MSBuildThisFileDirectory)modules\afont.renderer.ixx">
+      <Filter>Module Files\almond\textures</Filter>
+    </ClCompile>
+    <ClCompile Include="$(MSBuildThisFileDirectory)modules\aimageatlaswriter.ixx">
+      <Filter>Module Files\almond\textures</Filter>
+    </ClCompile>
+    <ClCompile Include="$(MSBuildThisFileDirectory)modules\aimage.writer.ixx">
+      <Filter>Module Files\almond\textures</Filter>
+    </ClCompile>
+    <ClCompile Include="$(MSBuildThisFileDirectory)modules\aimage.loader.ixx">
+      <Filter>Module Files\almond\textures</Filter>
+    </ClCompile>
+    <ClCompile Include="$(MSBuildThisFileDirectory)modules\amipmapatlas.ixx">
+      <Filter>Module Files\almond\textures</Filter>
+    </ClCompile>
+    <ClCompile Include="$(MSBuildThisFileDirectory)modules\atexture.ixx">
+      <Filter>Module Files\almond\textures</Filter>
+    </ClCompile>
+    <ClCompile Include="$(MSBuildThisFileDirectory)modules\aspriteregistry.ixx">
+      <Filter>Module Files\almond\textures</Filter>
+    </ClCompile>
+    <ClCompile Include="$(MSBuildThisFileDirectory)modules\aspritehandle.ixx">
+      <Filter>Module Files\almond\textures</Filter>
+    </ClCompile>
+    <ClCompile Include="$(MSBuildThisFileDirectory)modules\asprite.pool.ixx">
+      <Filter>Module Files\almond\textures</Filter>
+    </ClCompile>
+    <ClCompile Include="$(MSBuildThisFileDirectory)modules\a2048like.ixx">
+      <Filter>Module Files\almond\games</Filter>
+    </ClCompile>
+    <ClCompile Include="$(MSBuildThisFileDirectory)modules\acellularsim.ixx">
+      <Filter>Module Files\almond\games</Filter>
+    </ClCompile>
+    <ClCompile Include="$(MSBuildThisFileDirectory)modules\aapplicationmodule.ixx">
+      <Filter>Module Files\almond\games</Filter>
+    </ClCompile>
+    <ClCompile Include="$(MSBuildThisFileDirectory)modules\atetrislike.ixx">
+      <Filter>Module Files\almond\games</Filter>
+    </ClCompile>
+    <ClCompile Include="$(MSBuildThisFileDirectory)modules\asokobanlike.ixx">
+      <Filter>Module Files\almond\games</Filter>
+    </ClCompile>
+    <ClCompile Include="$(MSBuildThisFileDirectory)modules\asnakelike.ixx">
+      <Filter>Module Files\almond\games</Filter>
+    </ClCompile>
+    <ClCompile Include="$(MSBuildThisFileDirectory)modules\aslidingpuzzlelike.ixx">
+      <Filter>Module Files\almond\games</Filter>
+    </ClCompile>
+    <ClCompile Include="$(MSBuildThisFileDirectory)modules\asandsim.ixx">
+      <Filter>Module Files\almond\games</Filter>
+    </ClCompile>
+    <ClCompile Include="$(MSBuildThisFileDirectory)modules\apacmanlike.ixx">
+      <Filter>Module Files\almond\games</Filter>
+    </ClCompile>
+    <ClCompile Include="$(MSBuildThisFileDirectory)modules\aminesweeperlike.ixx">
+      <Filter>Module Files\almond\games</Filter>
+    </ClCompile>
+    <ClCompile Include="$(MSBuildThisFileDirectory)modules\amatch3like.ixx">
+      <Filter>Module Files\almond\games</Filter>
+    </ClCompile>
+    <ClCompile Include="$(MSBuildThisFileDirectory)modules\afroggerlike.ixx">
+      <Filter>Module Files\almond\games</Filter>
+    </ClCompile>
+    <ClCompile Include="$(MSBuildThisFileDirectory)modules\agamecore.ixx">
+      <Filter>Module Files\almond\games</Filter>
+    </ClCompile>
+    <ClCompile Include="$(MSBuildThisFileDirectory)modules\aenduserapplication.ixx">
+      <Filter>Module Files\almond\games</Filter>
+    </ClCompile>
+    <ClCompile Include="$(MSBuildThisFileDirectory)src\editor\aeditor.scene.cpp">
+      <Filter>Source Files\epoch\editor</Filter>
+    </ClCompile>
+  </ItemGroup>
+  <ItemGroup>
+    <Image Include="$(MSBuildThisFileDirectory)src\icon.ico">
+      <Filter>Resource Files</Filter>
+    </Image>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="$(MSBuildThisFileDirectory)src\WinResource.aps">
+      <Filter>Resource Files</Filter>
+    </None>
+    <None Include="$(MSBuildThisFileDirectory)modules\.gitkeep">
+      <Filter>Module Files\gui</Filter>
+    </None>
+  </ItemGroup>
+  <ItemGroup>
+    <ResourceCompile Include="$(MSBuildThisFileDirectory)src\WinResource.rc">
+      <Filter>Resource Files</Filter>
+    </ResourceCompile>
+  </ItemGroup>
+</Project>
