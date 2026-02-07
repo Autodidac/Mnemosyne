@@ -77,7 +77,6 @@ namespace almondnamespace::gui
             switch (ctx->type)
             {
             case core::ContextType::OpenGL:
-            case core::ContextType::RayLib:
                 return core::RenderPath::OpenGL;
             case core::ContextType::SFML:
                 return core::RenderPath::SFML;
