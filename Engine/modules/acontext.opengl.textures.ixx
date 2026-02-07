@@ -125,8 +125,15 @@ export namespace almondnamespace::opengltextures
             if (!ctx) return result;
 
 #if defined(_WIN32)
-            result.device = static_cast<HDC>(ctx->native_drawable);
-            result.context = static_cast<HGLRC>(ctx->native_gl_context);
+            if (ctx->windowData)
+            {
+                result.device = static_cast<HDC>(ctx->windowData->hdc);
+                result.context = static_cast<HGLRC>(ctx->windowData->glContext);
+            }
+            if (!result.device)  result.device = static_cast<HDC>(ctx->hdc);
+            if (!result.context) result.context = static_cast<HGLRC>(ctx->hglrc);
+            if (!result.device)  result.device = static_cast<HDC>(ctx->native_drawable);
+            if (!result.context) result.context = static_cast<HGLRC>(ctx->native_gl_context);
 #elif defined(__linux__)
             result.display = static_cast<Display*>(ctx->native_drawable);
             result.drawable = static_cast<GLXDrawable>(reinterpret_cast<std::uintptr_t>(ctx->native_window));

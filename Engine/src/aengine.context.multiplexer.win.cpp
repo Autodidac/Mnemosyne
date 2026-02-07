@@ -590,11 +590,7 @@ namespace almondnamespace::core
                     // - Raylib manages its own presentable OpenGL context on its window; we keep this flag false here as well.
                     // - Vulkan windows MUST NOT have an HGLRC attached; mixing WGL pixel formats/contexts with a Vulkan swapchain
                     //   is a fast path to "blank window" confusion.
-                    if (type == ContextType::OpenGL
-#if defined(ALMOND_USING_RAYLIB)
-                        || type == ContextType::RayLib
-#endif
-                        )
+                    if (type == ContextType::OpenGL)
                     {
                         glrc = CreateSharedGLContext(hdc);
                         // usesSharedContext stays false: these are real windows.
