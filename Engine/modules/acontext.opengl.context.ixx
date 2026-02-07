@@ -782,6 +782,15 @@ export namespace almondnamespace::openglcontext
         // Do not render/swap on those dummy/shared contexts; they exist only for resource sharing.
         if (ctx->windowData && ctx->windowData->usesSharedContext)
         {
+            const auto previousContext = core::MultiContextManager::GetCurrent();
+            core::MultiContextManager::SetCurrent(ctx);
+
+            struct ScopedCurrentContext
+            {
+                std::shared_ptr<core::Context> previous;
+                ~ScopedCurrentContext() { core::MultiContextManager::SetCurrent(std::move(previous)); }
+            } scoped{ previousContext };
+
             queue.drain();
             return true;
         }

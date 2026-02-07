@@ -108,6 +108,14 @@ namespace almondnamespace::vulkancontext
         if (!ctx)
             return false;
 
+        struct ScopedCurrentContext
+        {
+            std::shared_ptr<core::Context> previous;
+            ~ScopedCurrentContext() { core::set_current_render_context(std::move(previous)); }
+        } scoped{ core::get_current_render_context() };
+
+        core::set_current_render_context(ctx);
+
         const std::uintptr_t windowId = ctx->windowData
             ? reinterpret_cast<std::uintptr_t>(ctx->windowData->hwnd)
             : reinterpret_cast<std::uintptr_t>(ctx->native_window);
