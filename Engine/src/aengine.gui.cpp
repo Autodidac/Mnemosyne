@@ -37,6 +37,7 @@
 import aengine.core.context;
 import aengine.context.multiplexer;
 import aengine.context.window;
+import aengine.context.commandqueue;
 
 import aatlas.manager;
 import aatlas.texture;
@@ -68,6 +69,25 @@ namespace almondnamespace::gui
 
     namespace
     {
+        [[nodiscard]] static core::RenderPath render_path_for_context(const core::Context* ctx) noexcept
+        {
+            if (!ctx)
+                return core::RenderPath::Unknown;
+
+            switch (ctx->type)
+            {
+            case core::ContextType::OpenGL:
+            case core::ContextType::RayLib:
+                return core::RenderPath::OpenGL;
+            case core::ContextType::SFML:
+                return core::RenderPath::SFML;
+            case core::ContextType::Vulkan:
+                return core::RenderPath::Vulkan;
+            default:
+                return core::RenderPath::Unknown;
+            }
+        }
+
         struct GuiFontCache
         {
             std::string fontName = kDefaultFontName;
@@ -415,6 +435,7 @@ namespace almondnamespace::gui
             if (ctx.windowData)
             {
                 std::weak_ptr<Context> weak = ctx.windowData->context;
+                const core::RenderPath renderPath = render_path_for_context(&ctx);
                 ctx.windowData->commandQueue.enqueue([weak]()
                     {
                         if (auto self = weak.lock())
@@ -422,7 +443,7 @@ namespace almondnamespace::gui
                             try { perform_backend_upload(*self); }
                             catch (...) { /* GUI optional */ }
                         }
-                    });
+                    }, renderPath);
                 return;
             }
 
@@ -441,6 +462,7 @@ namespace almondnamespace::gui
             if (ctx->windowData && g_frame.ctxShared)
             {
                 auto ctxShared = g_frame.ctxShared;
+                const core::RenderPath renderPath = render_path_for_context(ctx);
 
                 ctx->windowData->commandQueue.enqueue([ctxShared, handle, x, y, w, h]()
                     {
@@ -450,7 +472,7 @@ namespace almondnamespace::gui
                         auto atlases = almondnamespace::atlasmanager::get_atlas_vector_snapshot();
                         std::span<const TextureAtlas* const> span(atlases.data(), atlases.size());
                         ctxShared->draw_sprite_safe(handle, span, x, y, w, h);
-                    });
+                    }, renderPath);
 
                 return;
             }
