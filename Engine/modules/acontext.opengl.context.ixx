@@ -778,19 +778,25 @@ export namespace almondnamespace::openglcontext
     {
         if (!ctx) return false;
 
+        // IMPORTANT:
+        //   MultiContextManager::GetCurrent() is an alias for core::get_current_render_context().
+        //   GUI sprite draws resolve the target window/context via that pointer.
+        //   If we don't set it here, GUI draws fall back to the backend's cached GL state
+        //   (often the Raylib shared/dummy context) and you get a blank OpenGL window.
+        struct ScopedRenderContext
+        {
+            std::shared_ptr<core::Context> prev;
+            ~ScopedRenderContext() { core::set_current_render_context(std::move(prev)); }
+        } scopedRender{ core::get_current_render_context() };
+
+        core::set_current_render_context(ctx);
+
         // Raylib (and some shared-texture backends) create an OpenGL host context that is *not* a presentable window.
         // Do not render/swap on those dummy/shared contexts; they exist only for resource sharing.
         if (ctx->windowData && ctx->windowData->usesSharedContext)
         {
-            const auto previousContext = core::MultiContextManager::GetCurrent();
-            core::MultiContextManager::SetCurrent(ctx);
-
-            struct ScopedCurrentContext
-            {
-                std::shared_ptr<core::Context> previous;
-                ~ScopedCurrentContext() { core::MultiContextManager::SetCurrent(std::move(previous)); }
-            } scoped{ previousContext };
-
+            // Shared/dummy host contexts exist only for resource sharing.
+            // Drain uploads/tasks (so other contexts can see the resources), but never swap/present.
             queue.drain();
             return true;
         }
@@ -813,9 +819,6 @@ export namespace almondnamespace::openglcontext
             if (!fallback.valid() || !guard.set(fallback))
                 return false;
         }
-
-        const auto previousContext = core::MultiContextManager::GetCurrent();
-        core::MultiContextManager::SetCurrent(ctx);
 
         atlasmanager::process_pending_uploads(core::ContextType::OpenGL);
 
@@ -874,15 +877,7 @@ export namespace almondnamespace::openglcontext
             static_cast<std::int64_t>(depth),
             telemetry::RendererTelemetryTags{ core::ContextType::OpenGL, windowId });
 
-        {
-            struct ScopedCurrentContext
-            {
-                std::shared_ptr<core::Context> previous;
-                ~ScopedCurrentContext() { core::MultiContextManager::SetCurrent(std::move(previous)); }
-            } scoped{ previousContext };
-
-            queue.drain();
-        }
+        queue.drain();
 
         PlatformGL::swap_buffers(guard.target());
 

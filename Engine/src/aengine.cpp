@@ -239,6 +239,12 @@ namespace almondnamespace::core
 
                             bool ctx_running = win->running;
 
+                            // Raylib (and other backends) can create a hidden OpenGL "shared" host context.
+                            // It's not a presentable window, so generating editor GUI for it just burns CPU/GPU
+                            // and can mislead the renderer routing (it *looks* like "OpenGL doesn't render").
+                            if (win->usesSharedContext)
+                                return ctx_running;
+
                             const auto now = std::chrono::steady_clock::now();
                             const auto raw = ctx.get();
 
