@@ -46,3 +46,13 @@ obj/*
 build/*
 App/*
 mylib/*
+
+intermediate/
+
+Engine/vcpkg_installed/
+
+bin/x64/Debug/TheEditorExecutable.pdb
+
+*.pdb
+
+*.idb
